@@ -29,8 +29,8 @@ const ColorPicker = () => {
   return (
     <Container>
       <TextStyle>팬 색깔 (HEX)</TextStyle>
-      <input type="text" placeholder="#FFFFFF" id="pickcolor" />
-      <div id="color-holder" class="color-holder call-picker"></div>
+      <input type="text" placeholder="#000000" id="pickcolor" />
+      <div id="color-holder" className="color-holder call-picker"></div>
       <ConfirmButton>변경</ConfirmButton>
     </Container>
   );
