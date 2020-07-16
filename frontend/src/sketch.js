@@ -8,6 +8,19 @@ const sketch = (s) => {
   s.setup = () => {
     socket = io.connect(config.API);
 
+    const color_picker = s.select("#pickcolor");
+    const color_btn = s.select("#color-btn");
+    const color_holder = s.select("#color-holder");
+
+    color_btn.mousePressed(() => {
+      if (/(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(color_picker.value())) {
+        color = color_picker.value();
+        color_holder.style("background-color", color);
+      } else {
+        alert("올바른 HEX 색깔 코드가 아닙니다.");
+      }
+    });
+
     const cv = s.createCanvas(800, 600);
     cv.id("myCanvas");
     cv.background(200);
